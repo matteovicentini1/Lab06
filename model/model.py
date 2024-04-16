@@ -42,10 +42,14 @@ class Model:
                         r.append(k)
             return r
         elif re!=None and y!=None and b!=None:
+            t=[]
             for i in self.join:
                 for k in self.venditedecr:
-                    if i.pbrand==b and int(k.prodnumber)==i.number and int(k.retailcod)== int(re) and int(k.anno)==int(y):
-                        r.append(k)
+                    if i.pbrand==b and int(k.prodnumber)==i.number :
+                        t.append(k)
+            for i in t:
+                if int(i.retailcod) == int(re) and int(i.anno) == int(y):
+                    r.append(i)
             return r
 
 

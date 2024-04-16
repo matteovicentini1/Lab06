@@ -43,9 +43,12 @@ class Controller:
                 for i in range(0,5):
                     self._view.txt_result.controls.append(ft.Text(fine[i]))
                 self._view.update_page()
-            else:
+            elif len(fine) > 0:
                 for i in fine:
                     self._view.txt_result.controls.append(ft.Text(fine[i]))
+                self._view.update_page()
+            else:
+                self._view.txt_result.controls.append(ft.Text('Nessun dato disponibile',color='red',size=24))
                 self._view.update_page()
         if anno != 'Nessun filtro' and brand == 'Nessun filtro' and ret == 'Nessun filtro':
             fine = self._model.take(anno, None, None)
@@ -53,9 +56,12 @@ class Controller:
                 for i in range(0, 5):
                     self._view.txt_result.controls.append(ft.Text(fine[i]))
                 self._view.update_page()
-            else:
+            elif len(fine) > 0:
                 for i in fine:
                     self._view.txt_result.controls.append(ft.Text(fine[i]))
+                self._view.update_page()
+            else:
+                self._view.txt_result.controls.append(ft.Text('Nessun dato disponibile',color='red',size=24))
                 self._view.update_page()
         if anno == 'Nessun filtro' and brand != 'Nessun filtro' and ret == 'Nessun filtro':
             fine = self._model.take(None, brand, None)
@@ -63,9 +69,12 @@ class Controller:
                 for i in range(0, 5):
                     self._view.txt_result.controls.append(ft.Text(fine[i]))
                 self._view.update_page()
-            else:
+            elif len(fine) > 0:
                 for i in fine:
                     self._view.txt_result.controls.append(ft.Text(fine[i]))
+                self._view.update_page()
+            else:
+                self._view.txt_result.controls.append(ft.Text('Nessun dato disponibile',color='red',size=24))
                 self._view.update_page()
         if anno != 'Nessun filtro' and brand != 'Nessun filtro' and ret == 'Nessun filtro':
             fine = self._model.take(anno, brand, None)
@@ -73,9 +82,12 @@ class Controller:
                 for i in range(0, 5):
                     self._view.txt_result.controls.append(ft.Text(fine[i]))
                 self._view.update_page()
-            else:
+            elif len(fine) > 0:
                 for i in fine:
                     self._view.txt_result.controls.append(ft.Text(fine[i]))
+                self._view.update_page()
+            else:
+                self._view.txt_result.controls.append(ft.Text('Nessun dato disponibile',color='red',size=24))
                 self._view.update_page()
         if anno != 'Nessun filtro' and brand == 'Nessun filtro' and ret != 'Nessun filtro':
             fine = self._model.take(anno, None, ret)
@@ -83,9 +95,12 @@ class Controller:
                 for i in range(0, 5):
                     self._view.txt_result.controls.append(ft.Text(fine[i]))
                 self._view.update_page()
-            else:
+            elif len(fine) > 0:
                 for i in fine:
                     self._view.txt_result.controls.append(ft.Text(fine[i]))
+                self._view.update_page()
+            else:
+                self._view.txt_result.controls.append(ft.Text('Nessun dato disponibile',color='red',size=24))
                 self._view.update_page()
         if anno == 'Nessun filtro' and brand != 'Nessun filtro' and ret != 'Nessun filtro':
             fine = self._model.take(None, brand, ret)
@@ -93,9 +108,12 @@ class Controller:
                 for i in range(0, 5):
                     self._view.txt_result.controls.append(ft.Text(fine[i]))
                 self._view.update_page()
-            else:
+            elif len(fine) > 0:
                 for i in fine:
                     self._view.txt_result.controls.append(ft.Text(fine[i]))
+                self._view.update_page()
+            else:
+                self._view.txt_result.controls.append(ft.Text('Nessun dato disponibile', color='red', size=24))
                 self._view.update_page()
         if anno != 'Nessun filtro' and brand != 'Nessun filtro' and ret != 'Nessun filtro':
             fine = self._model.take(anno, brand, ret)
@@ -103,10 +121,14 @@ class Controller:
                 for i in range(0, 5):
                     self._view.txt_result.controls.append(ft.Text(fine[i]))
                 self._view.update_page()
-            else:
+            elif len(fine)>0:
                 for i in fine:
                     self._view.txt_result.controls.append(ft.Text(fine[i]))
                 self._view.update_page()
+            else:
+                self._view.txt_result.controls.append(ft.Text('Nessun dato disponibile',color='red',size=24))
+                self._view.update_page()
+
 
 
 
