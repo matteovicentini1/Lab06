@@ -9,7 +9,8 @@ class Vendite:
         self.unitprice=unitprice
         self.unitsaleprice=unitsaleprice
         self.anno=anno
+        self.soldi=float(self.qty)*float(self.unitsaleprice)
 
     def __str__(self):
-        return f'Data: {self.data}, Ricavo: {int(self.qty)*int(self.unitsaleprice)}, Retailer: {self.retailcod}, Product: {self.prodnumber}'
+        return f'Data: {self.data}, Ricavo: {float(self.qty)*float(self.unitsaleprice)}, Retailer: {self.retailcod}, Product: {self.prodnumber}'
 

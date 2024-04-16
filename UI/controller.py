@@ -130,15 +130,106 @@ class Controller:
                 self._view.update_page()
 
 
-
-
-
-
-
-
-
     def analizzavendite(self,e):
-        pass
+        vendite = self._model.venditedecr
+        fine = []
+        anno = self._view.anno.value
+        brand = self._view.brand.value
+        ret = self._view.retailer.value
+        if anno is None:
+            self._view.create_alert("Inserire l' anno")
+            return
+        if brand is None:
+            self._view.create_alert("Inserire il brand")
+            return
+        if ret is None:
+            self._view.create_alert("Inserire il retail")
+            return
+        if anno =='Nessun filtro' and brand =='Nessun filtro' and ret =='Nessun filtro':
+            self._view.txt_result.controls.append(ft.Text(f'Statistiche vendita:'))
+            self._view.txt_result.controls.append(ft.Text(f'Giro di affari: {self._model.solditot(vendite)}'))
+            self._view.txt_result.controls.append(ft.Text(f'numero vendite: {len(vendite)}'))
+            self._view.txt_result.controls.append(ft.Text(f'numero retails coinvolti: {self._model.contaretails(vendite)}'))
+            self._view.txt_result.controls.append(ft.Text(f'numero prodotti coinvolti: {self._model.contaprodotti(vendite)}'))
+            self._view.update_page()
+        if anno == 'Nessun filtro' and brand == 'Nessun filtro' and ret !='Nessun filtro':
+            fine=self._model.take(None,None,self._view.tendinaretail.cod)
+            self._view.txt_result.controls.append(ft.Text(f'Statistiche vendita:'))
+            self._view.txt_result.controls.append(ft.Text(f'Giro di affari: {self._model.solditot(fine)}'))
+            self._view.txt_result.controls.append(ft.Text(f'numero vendite: {len(fine)}'))
+            self._view.txt_result.controls.append(
+                ft.Text(f'numero retails coinvolti: {self._model.contaretails(fine)}'))
+            self._view.txt_result.controls.append(
+                ft.Text(f'numero prodotti coinvolti: {self._model.contaprodotti(fine)}'))
+            self._view.update_page()
+        if anno != 'Nessun filtro' and brand == 'Nessun filtro' and ret == 'Nessun filtro':
+            fine = self._model.take(anno, None, None)
+            self._view.txt_result.controls.append(ft.Text(f'Statistiche vendita:'))
+            self._view.txt_result.controls.append(ft.Text(f'Giro di affari: {self._model.solditot(fine)}'))
+            self._view.txt_result.controls.append(ft.Text(f'numero vendite: {len(fine)}'))
+            self._view.txt_result.controls.append(
+                ft.Text(f'numero retails coinvolti: {self._model.contaretails(fine)}'))
+            self._view.txt_result.controls.append(
+                ft.Text(f'numero prodotti coinvolti: {self._model.contaprodotti(fine)}'))
+            self._view.update_page()
+        if anno == 'Nessun filtro' and brand != 'Nessun filtro' and ret == 'Nessun filtro':
+            fine = self._model.take(None, brand, None)
+            self._view.txt_result.controls.append(ft.Text(f'Statistiche vendita:'))
+            self._view.txt_result.controls.append(ft.Text(f'Giro di affari: {self._model.solditot(fine)}'))
+            self._view.txt_result.controls.append(ft.Text(f'numero vendite: {len(fine)}'))
+            self._view.txt_result.controls.append(
+                ft.Text(f'numero retails coinvolti: {self._model.contaretails(fine)}'))
+            self._view.txt_result.controls.append(
+                ft.Text(f'numero prodotti coinvolti: {self._model.contaprodotti(fine)}'))
+            self._view.update_page()
+        if anno != 'Nessun filtro' and brand != 'Nessun filtro' and ret == 'Nessun filtro':
+            fine = self._model.take(anno, brand, None)
+            self._view.txt_result.controls.append(ft.Text(f'Statistiche vendita:'))
+            self._view.txt_result.controls.append(ft.Text(f'Giro di affari: {self._model.solditot(fine)}'))
+            self._view.txt_result.controls.append(ft.Text(f'numero vendite: {len(fine)}'))
+            self._view.txt_result.controls.append(
+                ft.Text(f'numero retails coinvolti: {self._model.contaretails(fine)}'))
+            self._view.txt_result.controls.append(
+                ft.Text(f'numero prodotti coinvolti: {self._model.contaprodotti(fine)}'))
+            self._view.update_page()
+        if anno != 'Nessun filtro' and brand == 'Nessun filtro' and ret != 'Nessun filtro':
+            fine = self._model.take(anno, None, ret)
+            self._view.txt_result.controls.append(ft.Text(f'Statistiche vendita:'))
+            self._view.txt_result.controls.append(ft.Text(f'Giro di affari: {self._model.solditot(fine)}'))
+            self._view.txt_result.controls.append(ft.Text(f'numero vendite: {len(fine)}'))
+            self._view.txt_result.controls.append(
+                ft.Text(f'numero retails coinvolti: {self._model.contaretails(fine)}'))
+            self._view.txt_result.controls.append(
+                ft.Text(f'numero prodotti coinvolti: {self._model.contaprodotti(fine)}'))
+            self._view.update_page()
+        if anno == 'Nessun filtro' and brand != 'Nessun filtro' and ret != 'Nessun filtro':
+            fine = self._model.take(None, brand, ret)
+            self._view.txt_result.controls.append(ft.Text(f'Statistiche vendita:'))
+            self._view.txt_result.controls.append(ft.Text(f'Giro di affari: {self._model.solditot(fine)}'))
+            self._view.txt_result.controls.append(ft.Text(f'numero vendite: {len(fine)}'))
+            self._view.txt_result.controls.append(
+                ft.Text(f'numero retails coinvolti: {self._model.contaretails(fine)}'))
+            self._view.txt_result.controls.append(
+                ft.Text(f'numero prodotti coinvolti: {self._model.contaprodotti(fine)}'))
+            self._view.update_page()
+        if anno != 'Nessun filtro' and brand != 'Nessun filtro' and ret != 'Nessun filtro':
+            fine = self._model.take(anno, brand, ret)
+            self._view.txt_result.controls.append(ft.Text(f'Statistiche vendita:'))
+            self._view.txt_result.controls.append(ft.Text(f'Giro di affari: {self._model.solditot(fine)}'))
+            self._view.txt_result.controls.append(ft.Text(f'numero vendite: {len(fine)}'))
+            self._view.txt_result.controls.append(
+                ft.Text(f'numero retails coinvolti: {self._model.contaretails(fine)}'))
+            self._view.txt_result.controls.append(
+                ft.Text(f'numero prodotti coinvolti: {self._model.contaprodotti(fine)}'))
+            self._view.update_page()
+
+
+
+
+
+
+
+
 
     def getdate(self):
         return self.dd.anni()

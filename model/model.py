@@ -51,6 +51,23 @@ class Model:
                 if int(i.retailcod) == int(re) and int(i.anno) == int(y):
                     r.append(i)
             return r
+    def solditot(self,list):
+        som=0
+        for i in list:
+            som +=i.soldi
+        return som
 
+    def contaretails(self,lista):
+        s=0
+        st = set()
+        for i in lista:
+            st.add(i.retailcod)
+        return len(st)
 
+    def contaprodotti(self,lista):
+        s=0
+        st = set()
+        for i in lista:
+            st.add(i.prodnumber)
+        return len(st)
 
