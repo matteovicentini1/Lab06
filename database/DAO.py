@@ -1,6 +1,7 @@
 from database.DB_connect import DBConnect
 import model.retailer as m
 import model.vendite as v
+import model.prodotti as p
 
 class DAO():
     def __init__(self):
@@ -67,7 +68,7 @@ class DAO():
                             FROM go_products'''
         cursore.execute(query)
         for i in cursore:
-            result.append(v.Vendite(i[0], i[1], i[2], i[3], i[4], i[5], i[6], i[7]))
+            result.append(p.Prodotti(i[0], i[1], i[2], i[3], i[4], i[5], i[6], i[7]))
         cnx.close()
         cursore.close()
         return result

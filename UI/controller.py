@@ -57,6 +57,60 @@ class Controller:
                 for i in fine:
                     self._view.txt_result.controls.append(ft.Text(fine[i]))
                 self._view.update_page()
+        if anno == 'Nessun filtro' and brand != 'Nessun filtro' and ret == 'Nessun filtro':
+            fine = self._model.take(None, brand, None)
+            if len(fine) >= 5:
+                for i in range(0, 5):
+                    self._view.txt_result.controls.append(ft.Text(fine[i]))
+                self._view.update_page()
+            else:
+                for i in fine:
+                    self._view.txt_result.controls.append(ft.Text(fine[i]))
+                self._view.update_page()
+        if anno != 'Nessun filtro' and brand != 'Nessun filtro' and ret == 'Nessun filtro':
+            fine = self._model.take(anno, brand, None)
+            if len(fine) >= 5:
+                for i in range(0, 5):
+                    self._view.txt_result.controls.append(ft.Text(fine[i]))
+                self._view.update_page()
+            else:
+                for i in fine:
+                    self._view.txt_result.controls.append(ft.Text(fine[i]))
+                self._view.update_page()
+        if anno != 'Nessun filtro' and brand == 'Nessun filtro' and ret != 'Nessun filtro':
+            fine = self._model.take(anno, None, ret)
+            if len(fine) >= 5:
+                for i in range(0, 5):
+                    self._view.txt_result.controls.append(ft.Text(fine[i]))
+                self._view.update_page()
+            else:
+                for i in fine:
+                    self._view.txt_result.controls.append(ft.Text(fine[i]))
+                self._view.update_page()
+        if anno == 'Nessun filtro' and brand != 'Nessun filtro' and ret != 'Nessun filtro':
+            fine = self._model.take(None, brand, ret)
+            if len(fine) >= 5:
+                for i in range(0, 5):
+                    self._view.txt_result.controls.append(ft.Text(fine[i]))
+                self._view.update_page()
+            else:
+                for i in fine:
+                    self._view.txt_result.controls.append(ft.Text(fine[i]))
+                self._view.update_page()
+        if anno != 'Nessun filtro' and brand != 'Nessun filtro' and ret != 'Nessun filtro':
+            fine = self._model.take(anno, brand, ret)
+            if len(fine) >= 5:
+                for i in range(0, 5):
+                    self._view.txt_result.controls.append(ft.Text(fine[i]))
+                self._view.update_page()
+            else:
+                for i in fine:
+                    self._view.txt_result.controls.append(ft.Text(fine[i]))
+                self._view.update_page()
+
+
+
+
 
 
 
